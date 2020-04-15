@@ -1,4 +1,4 @@
-Uploaded in this repositery a list of codes & function used for a project for the recognition of human locomotor activities using different Ml models , the data first denoised, segmented , features extracted & selected & finally fed to the "parameter tuned" models.       
+Uploaded in this repositery a list of codes & functions used for a Study of using different Ml models/methods for the recognition of human locomotor activities from wearable sensor. The objective was to investigae the suitability of some models/methods/features over the others by measures of performances metrices. The data was first denoised, segmented , then features  were extracted & selected & finally fed to the "parameter tuned" models.       
 
 The code for every step mentioned above is included.
 

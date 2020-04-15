@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri May  4 12:21:33 2018
-
+feed forward neural network model building & paramerter tuning
 @author: Rawan
 """
 

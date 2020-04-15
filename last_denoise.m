@@ -1,4 +1,7 @@
-rawdataFileOfSubject=fullfile('C:\','Users','MUHAMMED ALI','Desktop','final year project','ENABL3S','AB156','Raw','AB156_Circuit');
+%this code used matlab filtering functions to denoise the data , we wanted to compare the effiency of python filtering fuction to Matlab ones.
+% we used bandbass & notch butterworth filter along with wavelet denoising functions.
+
+rawdataFileOfSubject=fullfile('C:\','Users','MUHAMMED ALI','Desktop','final year project','ENABL3S','AB156','Raw','AB156_Circuit');%path of the data
 newpath=fullfile('C:\','Users','MUHAMMED ALI','Desktop','final year project','ENABL3S','AB156','filtered','AB156_Circuit');
 for k = 1:50 
 ModifiedrawdataFileOfSubject=[rawdataFileOfSubject '_' num2str(k,'%03d') '_raw.csv'];

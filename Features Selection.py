@@ -2,7 +2,7 @@
 """
 Created on Mon May  7 17:17:16 2018
 
-@author: Rawan
+this code uses different algorithms for features selection to figure out what algorithm is the best
 """
 #----------------------------------
 
@@ -49,6 +49,7 @@ features_y =features.Mode
 #    plt.savefig('C:\\Users\\D\\Desktop\\Graduation Project Stuff\\- Datasets\\ENABL3S\\Feature Variance\\'+str(i)+'. '+features.columns[i]+'.png')
 
 #%%
+#             T TEST              #
 
 PValues=[]
 for j in range(features_X.shape[1]):
@@ -62,50 +63,15 @@ T_test = pd.DataFrame({'Feature':features.columns[:features_X.shape[1]],'Average
 sig = T_test[T_test.Average_P_Value <=0.05]
 
 #%%
-
+#            Extra tree classifier           #
 clf = ExtraTreesClassifier()
 clf = clf.fit(features_X, features_y)
 imp=clf.feature_importances_
 
 
-#%%
-
-from sklearn.datasets import load_boston
-
-# Load the boston dataset.
-boston = load_boston()
-X, y = boston['data'], boston['target']
-
-# We use the base estimator LassoCV since the L1 norm promotes sparsity of features.
-clf = LassoCV()
-
-# Set a minimum threshold of 0.25
-sfm = SelectFromModel(clf, threshold=0.25)
-sfm.fit(X, y)
-n_features = sfm.transform(X).shape[1]
-
-# Reset the threshold till the number of features equals two.
-# Note that the attribute can be set directly instead of repeatedly
-# fitting the metatransformer.
-while n_features > 2:
-    sfm.threshold += 0.1
-    X_transform = sfm.transform(X)
-    n_features = X_transform.shape[1]
-
-# Plot the selected two features from X.
-plt.title(
-    "Features selected from Boston using SelectFromModel with "
-    "threshold %0.3f." % sfm.threshold)
-feature1 = X_transform[:, 0]
-feature2 = X_transform[:, 1]
-plt.plot(feature1, feature2, 'r.')
-plt.xlabel("Feature number 1")
-plt.ylabel("Feature number 2")
-plt.ylim([np.min(feature2), np.max(feature2)])
-plt.show()
 
 #%%
-
+#            PCA       #
 from sklearn import linear_model, decomposition, datasets
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -161,6 +127,7 @@ plt.ylim(0,1)
 plt.show() 
 
 #%%
+#           LDA              #
 
 features = pd.read_pickle(path_1)
 features_X=features.iloc[:,:features.shape[1]-1]

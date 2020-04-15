@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep 13 20:29:29 2018
-
+this code plots the different activities against time 
 @author: MUHAMMED ALI
 """
 import numpy as np

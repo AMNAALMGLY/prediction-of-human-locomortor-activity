@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed May  9 19:30:25 2018
-
+this code evaluate the performance (in terms of F1-score & time in seconds) of different models used.
 @author: Rawan
 """
 
